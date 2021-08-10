@@ -3,7 +3,7 @@ namespace PizzaWeekly.Model
 {
     public class Order
     {
-        public int OId { get; set; }
+        public int id { get; set; }
         public string Type { get; set; }
         public string Crust { get; set; }
         public int Quantity { get; set; }

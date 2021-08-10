@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PizzaWeekly.Model;
 
 namespace PizzaWeekly
 {
@@ -17,6 +19,7 @@ namespace PizzaWeekly
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<OrderDB>(options => options.UseSqlite("Data Source = Order.db"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
