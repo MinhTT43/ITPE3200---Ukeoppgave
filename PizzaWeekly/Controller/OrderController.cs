@@ -22,6 +22,13 @@ namespace PizzaWeekly.Controller
             List<Order> OrderList = _orderDB.Orders.ToList();
             return OrderList;
         }
+
+        // TODO: Change to boolean in order to print error message
+        public void PlaceOrder(Order newOrder)
+        {
+            _orderDB.Add(newOrder);
+            _orderDB.SaveChanges();
+        }
     }
 }
  
